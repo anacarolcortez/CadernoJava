@@ -13,5 +13,9 @@ public class Main {
         System.out.println(conta.titular + ": " + conta.saldo);
         //System.out.println(outraConta.titular + ": " + outraConta.saldo);
         //A instância outraConta aponta para o endereço de memória de conta. Recebe os valores do objetdo de referência e também pode alterá-los
+
+        conta.deposita(100);
+        System.out.println(conta.titular + ": " + conta.saldo);
+
     }
 }
