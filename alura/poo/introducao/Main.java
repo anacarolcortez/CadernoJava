@@ -16,6 +16,9 @@ public class Main {
 
         conta.deposita(100);
         System.out.println(conta.titular + ": " + conta.saldo);
+        conta.saca(500);
+        System.out.println(conta.titular + ": " + conta.saldo);
+
 
     }
 }

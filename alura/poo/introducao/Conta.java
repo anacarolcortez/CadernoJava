@@ -18,6 +18,18 @@ public class Conta {
         this.saldo += valor;
     }
 
+    public boolean temSaldoSuficiente(double valor){
+        return valor < this.saldo;
+    }
+
+    public void saca(double valor){
+        if (temSaldoSuficiente(valor)){
+            this.saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
     public double getSaldo() {
         return saldo;
     }
