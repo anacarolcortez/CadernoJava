@@ -30,6 +30,16 @@ public class Conta {
         }
     }
 
+    public void transfere(double valor, Conta destino){
+        if (temSaldoSuficiente(valor)){
+            this.saldo -= valor;
+            destino.saldo += valor;
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    //para o próximo passo: acesso private
     public double getSaldo() {
         return saldo;
     }
