@@ -22,20 +22,19 @@ public class Conta {
         return valor < this.saldo;
     }
 
-    public void saca(double valor){
+    public boolean saca(double valor){
         if (temSaldoSuficiente(valor)){
             this.saldo -= valor;
+            return true;
         } else {
             System.out.println("Saldo insuficiente");
         }
+        return false;
     }
 
     public void transfere(double valor, Conta destino){
-        if (temSaldoSuficiente(valor)){
-            this.saldo -= valor;
+        if (saca(valor)) {
             destino.saldo += valor;
-        } else {
-            System.out.println("Saldo insuficiente");
         }
     }
 
