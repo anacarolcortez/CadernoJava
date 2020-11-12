@@ -5,9 +5,9 @@ public class Conta {
     double saldo;
     int agencia;
     int numero;
-    String titular;
+    Cliente titular;
 
-    public Conta (double saldo, int agencia, int numero, String titular){
+    public Conta (double saldo, int agencia, int numero, Cliente titular){
         this.saldo = saldo;
         this.agencia = agencia;
         this.numero = numero;
@@ -62,15 +62,6 @@ public class Conta {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
 
 
 
