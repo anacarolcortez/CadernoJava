@@ -2,28 +2,28 @@ package alura.poo.introducao;
 
 public class Cliente {
 
-    String nome;
-    String cpf;
+    private String _nome;
+    private String _cpf;
 
     public Cliente(String nome, String cpf){
-        this.nome = nome;
-        this.cpf = cpf;
+        this._nome = nome;
+        this._cpf = cpf;
     }
 
     //para o próximo passo: encapsulamento
     public String getNome() {
-        return nome;
+        return _nome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this._nome = nome;
     }
 
     public String getCpf() {
-        return cpf;
+        return _cpf;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this._cpf = cpf;
     }
 }

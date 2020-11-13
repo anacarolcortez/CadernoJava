@@ -5,13 +5,13 @@ public class Conta {
     private double _saldo;
     private int _agencia;
     private int _numero;
-    Cliente titular;
+    private Cliente _titular;
 
     public Conta (double saldo, int agencia, int numero, Cliente titular){
         this._saldo = saldo;
         this._agencia = agencia;
         this._numero = numero;
-        this.titular = titular;
+        this._titular = titular;
     }
 
     public void deposita(double valor){
@@ -38,7 +38,6 @@ public class Conta {
         }
     }
 
-    //para o próximo passo: acesso private
     public double getSaldo() {
         return _saldo;
     }
@@ -63,6 +62,13 @@ public class Conta {
         this._numero = numero;
     }
 
+    public Cliente get_titular() {
+        return _titular;
+    }
+
+    public void set_titular(Cliente _titular) {
+        this._titular = _titular;
+    }
 
 
 }
