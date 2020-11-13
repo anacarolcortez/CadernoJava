@@ -2,29 +2,29 @@ package alura.poo.introducao;
 
 public class Conta {
 
-    double saldo;
-    int agencia;
-    int numero;
+    private double _saldo;
+    private int _agencia;
+    private int _numero;
     Cliente titular;
 
     public Conta (double saldo, int agencia, int numero, Cliente titular){
-        this.saldo = saldo;
-        this.agencia = agencia;
-        this.numero = numero;
+        this._saldo = saldo;
+        this._agencia = agencia;
+        this._numero = numero;
         this.titular = titular;
     }
 
     public void deposita(double valor){
-        this.saldo += valor;
+        this._saldo += valor;
     }
 
     public boolean temSaldoSuficiente(double valor){
-        return valor < this.saldo;
+        return valor < this._saldo;
     }
 
     public boolean saca(double valor){
         if (temSaldoSuficiente(valor)){
-            this.saldo -= valor;
+            this._saldo -= valor;
             return true;
         } else {
             System.out.println("Saldo insuficiente");
@@ -34,33 +34,33 @@ public class Conta {
 
     public void transfere(double valor, Conta destino){
         if (saca(valor)) {
-            destino.saldo += valor;
+            destino._saldo += valor;
         }
     }
 
     //para o próximo passo: acesso private
     public double getSaldo() {
-        return saldo;
+        return _saldo;
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        this._saldo = saldo;
     }
 
     public int getAgencia() {
-        return agencia;
+        return _agencia;
     }
 
     public void setAgencia(int agencia) {
-        this.agencia = agencia;
+        this._agencia = agencia;
     }
 
     public int getNumero() {
-        return numero;
+        return _numero;
     }
 
     public void setNumero(int numero) {
-        this.numero = numero;
+        this._numero = numero;
     }
 
 

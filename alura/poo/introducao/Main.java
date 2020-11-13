@@ -19,8 +19,8 @@ public class Main {
 
         //teste métodos
         conta.transfere(700, outraConta);
-        System.out.println(conta.titular.nome + ": " + conta.saldo);
-        System.out.println(outraConta.titular.nome + ": " + outraConta.saldo);
+        System.out.println(conta.titular.nome + ": " + conta.getSaldo());
+        System.out.println(outraConta.titular.nome + ": " + outraConta.getSaldo());
 
     }
 }
