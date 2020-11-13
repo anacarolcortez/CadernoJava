@@ -43,6 +43,10 @@ public class Conta {
     }
 
     public void setSaldo(double saldo) {
+        if (saldo < 0) {
+            System.out.print("O saldo não pode ser incializado com valor negativo");
+            return;
+        }
         this._saldo = saldo;
     }
 
@@ -51,6 +55,10 @@ public class Conta {
     }
 
     public void setAgencia(int agencia) {
+        if (agencia <= 0) {
+            System.out.print("Digite um número de agência válido (maior que zero)");
+            return;
+        }
         this._agencia = agencia;
     }
 
@@ -59,6 +67,10 @@ public class Conta {
     }
 
     public void setNumero(int numero) {
+        if (numero <= 0) {
+            System.out.print("Digite um número de conta válido (maior que zero)");
+            return;
+        }
         this._numero = numero;
     }
 
