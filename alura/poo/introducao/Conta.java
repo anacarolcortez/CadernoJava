@@ -6,12 +6,14 @@ public class Conta {
     private int _agencia;
     private int _numero;
     private Cliente _titular;
+    private static int total;
 
     public Conta (double saldo, int agencia, int numero, Cliente titular){
         this._saldo = saldo;
         this._agencia = agencia;
         this._numero = numero;
         this._titular = titular;
+        this.total++;
     }
 
     public void deposita(double valor){
@@ -80,6 +82,11 @@ public class Conta {
 
     public void set_titular(Cliente _titular) {
         this._titular = _titular;
+    }
+
+    //método estático pertence à classe, e não à referência (instância)
+    public static int getTotal(){
+        return Conta.total;
     }
 
 
