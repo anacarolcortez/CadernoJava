@@ -5,6 +5,7 @@ public class Funcionario {
     private String nome;
     private String cpf;
     protected double salario;
+    //visível apenas para os filhos
 
     public Funcionario(String nome, String cpf, double salario) {
         this.nome = nome;

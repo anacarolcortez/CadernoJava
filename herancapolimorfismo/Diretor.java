@@ -12,6 +12,7 @@ public class Diretor extends Funcionario {
     @Override
     public double getBonificacao(){
         return super.salario * 0.5;
+        //poderia acessar o salário pelo método get, contudo. Não precisaria deixar o atributo protected na classe mãe
     }
 
 
