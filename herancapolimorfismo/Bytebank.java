@@ -19,6 +19,14 @@ public class Bytebank {
 
         System.out.println("Bonificações a pagar: " + controle.getSoma());
 
+        Cliente cliente = new Cliente("Po", "111.111.111-11");
+        ContaCorrente cc = new ContaCorrente(1000, 123, 456789, cliente);
+        ContaPoupanca cp = new ContaPoupanca(8000, 123, 4567891, cliente);
+
+        cp.transfere(100, cc);
+        System.out.println("Saldo cp: " + cp.getSaldo());
+        System.out.println("Saldo cc: " + cc.getSaldo());
+
     }
 
 }
