@@ -1,12 +1,10 @@
 package herancapolimorfismo;
 
-public class Diretor extends Funcionario {
+public class Diretor extends FuncionarioAutenticavel {
 
-    private String senha;
 
     public Diretor(String nome, String cpf, double salario, String senha) {
-        super(nome, cpf, salario);
-        this.senha = senha;
+        super(nome, cpf, salario, senha);
     }
 
     @Override
@@ -14,6 +12,7 @@ public class Diretor extends Funcionario {
         return super.salario * 0.5;
         //poderia acessar o salário pelo método get, contudo. Não precisaria deixar o atributo protected na classe mãe
     }
+
 
 
 }
