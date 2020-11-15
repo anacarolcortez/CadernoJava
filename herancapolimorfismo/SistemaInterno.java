@@ -2,8 +2,10 @@ package herancapolimorfismo;
 
 public abstract class SistemaInterno {
 
-    public void autenticaFuncionario(Gerente f){
-        boolean isAutenticado = f.autentica(f.getSenha());
+    private String senha = "senha recebida de alguma entrada em implentação";
+
+    public void autenticaFuncionario(UsuarioAutenticavel f){
+        boolean isAutenticado = f.autentica(this.senha);
         if (isAutenticado){
             System.out.println("Acesso autorizado");
         } else {
