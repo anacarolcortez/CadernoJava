@@ -13,5 +13,6 @@ public class TesteCurso {
 
         System.out.println(java.getAulas());
         System.out.println(java.getTempoTotal());
+        System.out.println(java);
     }
 }
