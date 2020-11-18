@@ -33,11 +33,14 @@ public class Curso {
     }
 
     public int getTempoTotal(){
+       /*
         int somaTempo = 0;
         for (Aula aula: aulas) {
             somaTempo += aula.getTempo();
         }
         return somaTempo;
+        */
+        return this.aulas.stream().mapToInt(Aula::getTempo).sum();
     }
 
 }
