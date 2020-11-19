@@ -13,7 +13,7 @@ public class TesteCursoComAluno {
         Aluno aluno1 = new Aluno("Tinky Winky", 102);
         Aluno aluno2 = new Aluno("Dipsy", 103);
         Aluno aluno3 = new Aluno("Lala", 104);
-        Aluno aluno4 = new Aluno("Po", 104);
+        Aluno aluno4 = new Aluno("Po", 105);
 
         java.matriculaAluno(aluno1);
         java.matriculaAluno(aluno2);
@@ -21,6 +21,8 @@ public class TesteCursoComAluno {
         java.matriculaAluno(aluno4);
 
         System.out.println(java.getAlunos());
+
+        System.out.println(java.buscaMatriculado(105));
 
     }
 }
