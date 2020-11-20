@@ -60,6 +60,9 @@ public class TesteOrdenaLista {
         lista.sort( (Conta c1, Conta c2) -> {
             return Integer.compare(c1.getNumero(), c2.getNumero() );
         });
+
+        Mais enxuto ainda (quando é uma só linha na função):
+        lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()) );
         */
     }
 
