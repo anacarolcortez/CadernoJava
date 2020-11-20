@@ -35,7 +35,7 @@ public class TesteOrdenaLista {
 
         System.out.println("Ordenação por número da conta");
         for (Conta conta: listaContas) {
-           System.out.println(conta.get_titular());
+           System.out.println(conta.gettitular());
         }
 
         ComparaNomeTitular comparaNome = new ComparaNomeTitular();
@@ -43,7 +43,7 @@ public class TesteOrdenaLista {
 
         System.out.println("Ordenação por nome do titular");
         for (Conta conta: listaContas) {
-            System.out.println(conta.get_titular());
+            System.out.println(conta.gettitular());
         }
     }
 

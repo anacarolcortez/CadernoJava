@@ -76,12 +76,12 @@ public abstract class Conta {
         this.numero = numero;
     }
 
-    public Cliente get_titular() {
+    public Cliente gettitular() {
         return titular;
     }
 
-    public void set_titular(Cliente _titular) {
-        this.titular = _titular;
+    public void settitular(Cliente titular) {
+        this.titular = titular;
     }
 
     //método estático pertence à classe, e não à referência (instância)
@@ -91,6 +91,6 @@ public abstract class Conta {
 
     @Override
     public String toString(){
-        return "Conta: " + get_titular();
+        return "Conta: " + gettitular();
     }
 }

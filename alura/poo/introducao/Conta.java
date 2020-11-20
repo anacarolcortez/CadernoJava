@@ -2,31 +2,31 @@ package alura.poo.introducao;
 
 public class Conta {
 
-    private double _saldo;
-    private int _agencia;
-    private int _numero;
-    private Cliente _titular;
+    private double saldo;
+    private int agencia;
+    private int numero;
+    private Cliente titular;
     private static int total;
 
     public Conta (double saldo, int agencia, int numero, Cliente titular){
-        this._saldo = saldo;
-        this._agencia = agencia;
-        this._numero = numero;
-        this._titular = titular;
+        this.saldo = saldo;
+        this.agencia = agencia;
+        this.numero = numero;
+        this.titular = titular;
         this.total++;
     }
 
     public void deposita(double valor){
-        this._saldo += valor;
+        this.saldo += valor;
     }
 
     public boolean temSaldoSuficiente(double valor){
-        return valor < this._saldo;
+        return valor < this.saldo;
     }
 
     public boolean saca(double valor){
         if (temSaldoSuficiente(valor)){
-            this._saldo -= valor;
+            this.saldo -= valor;
             return true;
         } else {
             System.out.println("Saldo insuficiente");
@@ -36,12 +36,12 @@ public class Conta {
 
     public void transfere(double valor, Conta destino){
         if (saca(valor)) {
-            destino._saldo += valor;
+            destino.saldo += valor;
         }
     }
 
     public double getSaldo() {
-        return _saldo;
+        return saldo;
     }
 
     public void setSaldo(double saldo) {
@@ -49,11 +49,11 @@ public class Conta {
             System.out.print("O saldo não pode ser incializado com valor negativo");
             return;
         }
-        this._saldo = saldo;
+        this.saldo = saldo;
     }
 
     public int getAgencia() {
-        return _agencia;
+        return agencia;
     }
 
     public void setAgencia(int agencia) {
@@ -61,11 +61,11 @@ public class Conta {
             System.out.print("Digite um número de agência válido (maior que zero)");
             return;
         }
-        this._agencia = agencia;
+        this.agencia = agencia;
     }
 
     public int getNumero() {
-        return _numero;
+        return numero;
     }
 
     public void setNumero(int numero) {
@@ -73,15 +73,15 @@ public class Conta {
             System.out.print("Digite um número de conta válido (maior que zero)");
             return;
         }
-        this._numero = numero;
+        this.numero = numero;
     }
 
-    public Cliente get_titular() {
-        return _titular;
+    public Cliente gettitular() {
+        return titular;
     }
 
-    public void set_titular(Cliente _titular) {
-        this._titular = _titular;
+    public void settitular(Cliente titular) {
+        this.titular = titular;
     }
 
     //método estático pertence à classe, e não à referência (instância)
