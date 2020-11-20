@@ -1,6 +1,6 @@
 package OrdenacaoListas;
 
-import herancapolimorfismo.Conta;
+import interfaces.Conta;
 
 import java.util.Comparator;
 
