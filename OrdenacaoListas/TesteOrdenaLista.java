@@ -30,11 +30,20 @@ public class TesteOrdenaLista {
         listaContas.add(c3);
         listaContas.add(c4);
 
-        ComparaListas comparaContas = new ComparaListas();
+        ComparaNumeroConta comparaContas = new ComparaNumeroConta();
         listaContas.sort(comparaContas);
 
+        System.out.println("Ordenação por número da conta");
         for (Conta conta: listaContas) {
            System.out.println(conta.get_titular());
+        }
+
+        ComparaNomeTitular comparaNome = new ComparaNomeTitular();
+        listaContas.sort(comparaNome);
+
+        System.out.println("Ordenação por nome do titular");
+        for (Conta conta: listaContas) {
+            System.out.println(conta.get_titular());
         }
     }
 

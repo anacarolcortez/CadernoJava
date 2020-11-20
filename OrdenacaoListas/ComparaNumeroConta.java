@@ -4,7 +4,7 @@ import interfaces.Conta;
 
 import java.util.Comparator;
 
-public class ComparaListas implements Comparator<Conta> {
+public class ComparaNumeroConta implements Comparator<Conta> {
 
     @Override
     public int compare(Conta c1, Conta c2) {
