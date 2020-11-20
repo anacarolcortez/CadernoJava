@@ -51,9 +51,14 @@ public class TesteOrdenaLista {
 
         listaContas.sort(new Comparator<Conta>() {
             @Override
-            public int compare(COnta c1, Conta c2) {
+            public int compare(Conta c1, Conta c2) {
                 return Integer.compare(c1.getNumero(), c2.getNumero());
             }
+        });
+
+        Mais enxuto:
+        lista.sort( (Conta c1, Conta c2) -> {
+            return Integer.compare(c1.getNumero(), c2.getNumero() );
         });
         */
     }
