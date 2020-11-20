@@ -21,5 +21,7 @@ public class TesteOrdena {
         while (iterador.hasNext()) {
             System.out.println(iterador.next().getNome());
         }
+
+
     }
 }
