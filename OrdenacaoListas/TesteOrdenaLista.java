@@ -45,6 +45,17 @@ public class TesteOrdenaLista {
         for (Conta conta: listaContas) {
             System.out.println(conta.gettitular());
         }
+
+        /*
+        Para não criar uma classe apenas para encapsular o override de um método, existe o conceito de "classe anônima":
+
+        listaContas.sort(new Comparator<Conta>() {
+            @Override
+            public int compare(COnta c1, Conta c2) {
+                return Integer.compare(c1.getNumero(), c2.getNumero());
+            }
+        });
+        */
     }
 
 
