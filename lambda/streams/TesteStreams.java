@@ -3,8 +3,11 @@ package lambda.streams;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TesteStreams {
+    //Stream é um método de Coleções
 
     public static void main(String[] args){
         List<Curso> cursos = new ArrayList<Curso>();
@@ -28,9 +31,21 @@ public class TesteStreams {
                 .forEach(System.out::println);
 
         int sum = cursos.stream()
-                .filter(c -> c.getAlunos() < 1000)
+                .filter(c -> c.getAlunos() <= 1000)
                 .mapToInt(Curso::getAlunos)
                 .sum();
         System.out.println("Total:" + sum);
+
+        //optional permite trabalhar melhor com null
+        Optional<Curso> cursoOpcional = cursos.stream()
+                .filter(c -> c.getAlunos() <= 1000)
+                .findAny();
+
+        cursoOpcional.ifPresent(c -> System.out.println("Disponível: " + c));
+
+        //retorna uma Lista. em vez de um Stream
+        List<Curso>cursoOpcional2 = cursos.stream()
+                .filter(c -> c.getAlunos() <= 1000)
+                .collect(Collectors.toList());
     }
 }
