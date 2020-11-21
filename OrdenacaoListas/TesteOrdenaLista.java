@@ -61,7 +61,7 @@ public class TesteOrdenaLista {
             return Integer.compare(c1.getNumero(), c2.getNumero() );
         });
 
-        Mais enxuto ainda (quando é uma só linha na função):
+        Mais enxuto ainda (quando é uma só line na função):
         lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()) );
         */
     }
