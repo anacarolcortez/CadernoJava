@@ -15,4 +15,8 @@ public class PecaXadrez extends Peca {
     public Cor getCor() {
         return cor;
     }
+
+    public char exibePeca(){
+        return '-';
+    }
 }

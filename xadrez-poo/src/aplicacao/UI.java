@@ -1,3 +1,5 @@
+package aplicacao;
+
 import xadrez.PecaXadrez;
 
 public class UI {
@@ -16,7 +18,7 @@ public class UI {
         if (peca == null){
             System.out.print("-");
         } else {
-            System.out.print(peca);
+            System.out.print(peca.exibePeca());
         }
         System.out.print(" ");
     }
