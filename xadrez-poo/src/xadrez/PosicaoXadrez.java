@@ -23,7 +23,7 @@ public class PosicaoXadrez {
         return linha;
     }
 
-    protected PosicaoTabuleiro converterMatriz(){
+    public PosicaoTabuleiro converterMatriz(){
         return new PosicaoTabuleiro(8-linha, coluna-'a');
     }
 

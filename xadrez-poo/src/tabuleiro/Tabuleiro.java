@@ -1,5 +1,9 @@
 package tabuleiro;
 
+import xadrez.PosicaoXadrez;
+
+import javax.swing.*;
+
 public class Tabuleiro {
     private int linhas;
     private int colunas;
@@ -36,7 +40,7 @@ public class Tabuleiro {
         return pecas[posicaoTabuleiro.getLinha()][posicaoTabuleiro.getColuna()];
     }
 
-    public void movePeca(Peca peca, PosicaoTabuleiro posicaoTabuleiro){
+    public void setPosicaoPeca(Peca peca, PosicaoTabuleiro posicaoTabuleiro){
         if (!posicaoExiste(posicaoTabuleiro)){
             throw new ErroTabuleiro("Posição inválida");
         }
@@ -47,15 +51,28 @@ public class Tabuleiro {
         peca.setPosicao(posicaoTabuleiro);
     }
 
+    public Peca removePeca(PosicaoTabuleiro posicaoTabuleiro){
+        if (!posicaoExiste(posicaoTabuleiro)){
+            throw new ErroTabuleiro("Posição inválida");
+        }
+        if (existePecaNaPosicao(posicaoTabuleiro)){
+            Peca aux = getPeca(posicaoTabuleiro);
+            aux.setPosicao(null);
+            pecas[posicaoTabuleiro.getLinha()][posicaoTabuleiro.getColuna()] = null;
+            return aux;
+        }
+        return null;
+    }
+
     private boolean posicaoExiste(int linha, int coluna){
         return linha >=0 && linha < linhas && coluna >= 0 && coluna < colunas;
     }
 
-    private boolean posicaoExiste(PosicaoTabuleiro posicaoTabuleiro){
+    public boolean posicaoExiste(PosicaoTabuleiro posicaoTabuleiro){
         return posicaoExiste(posicaoTabuleiro.getLinha(), posicaoTabuleiro.getColuna());
     }
 
-    private boolean existePecaNaPosicao(PosicaoTabuleiro posicaoTabuleiro){
+    public boolean existePecaNaPosicao(PosicaoTabuleiro posicaoTabuleiro){
         return getPeca(posicaoTabuleiro) != null;
     }
 }

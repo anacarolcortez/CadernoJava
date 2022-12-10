@@ -25,6 +25,11 @@ public class PosicaoTabuleiro {
         this.coluna = coluna;
     }
 
+    public void setValues(int linha, int coluna){
+        this.setLinha(linha);
+        this.setColuna(coluna);
+    }
+
     @Override
     public String toString(){
         return linha + ", " + coluna;

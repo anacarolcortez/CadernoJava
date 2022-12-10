@@ -25,7 +25,38 @@ public class PartidaXadrez {
     }
 
     private void moverPecaNoTabuleiro(char coluna, int linha, PecaXadrez pecaXadrez){
-        tabuleiro.movePeca(pecaXadrez, new PosicaoXadrez(coluna, linha).converterMatriz());
+        tabuleiro.setPosicaoPeca(pecaXadrez, new PosicaoXadrez(coluna, linha).converterMatriz());
+    }
+
+    public PecaXadrez performarMovePeca(PosicaoXadrez origem, PosicaoXadrez destino){
+        PosicaoTabuleiro posicaoInicial = origem.converterMatriz();
+        PosicaoTabuleiro posicaoFinal = destino.converterMatriz();
+        validaOrigem(posicaoInicial);
+        validaDestino(posicaoInicial, posicaoFinal);
+        Peca pecaEmilinada = movePeca(posicaoInicial, posicaoFinal);
+        return (PecaXadrez) pecaEmilinada;
+    }
+
+    private Peca movePeca(PosicaoTabuleiro origem, PosicaoTabuleiro destino){
+        Peca p = tabuleiro.removePeca(origem);
+        Peca pecaEmilinada = tabuleiro.removePeca(destino);
+        tabuleiro.setPosicaoPeca(p, destino);
+        return pecaEmilinada;
+    }
+
+    private void validaOrigem(PosicaoTabuleiro posicaoTabuleiro){
+        if (!tabuleiro.posicaoExiste(posicaoTabuleiro)){
+            throw new ErroXadrez("Não há peça nesta posição de origem");
+        }
+        if (!tabuleiro.getPeca(posicaoTabuleiro).existeMovimentoPossivel()){
+            throw new ErroXadrez("Não há movimentos possíveis para esta peça");
+        }
+    }
+
+    private void validaDestino(PosicaoTabuleiro origem, PosicaoTabuleiro destino){
+        if (!tabuleiro.getPeca(origem).movimentoPossivel(destino)){
+            throw new ErroXadrez("Destino inválido para esta peça");
+        }
     }
 
     private void setUpInicial(){
